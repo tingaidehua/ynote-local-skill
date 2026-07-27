@@ -1,0 +1,29 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust toolchain
+        run: rustup toolchain install stable-x86_64-pc-windows-gnullvm --profile minimal --component clippy
+      - name: Build and test
+        shell: pwsh
+        run: |
+          .\scripts\check-public-tree.ps1
+          $version = "${{ github.ref_name }}".TrimStart("v")
+          .\scripts\package-release.ps1 -Version $version
+      - name: Publish GitHub Release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/*.zip
+            release/SHA256SUMS-*.txt

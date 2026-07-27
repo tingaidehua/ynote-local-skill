@@ -1,0 +1,7 @@
+interface:
+  display_name: "有道云笔记实时镜像"
+  short_description: "无开发者 Key，实时镜像有道笔记并通过 Web 控制台安全管理"
+  default_prompt: "Use $ynote-local to refresh my Youdao Note mirror and inspect or control it through the safe localhost console."
+
+policy:
+  allow_implicit_invocation: true
