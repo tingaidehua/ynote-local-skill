@@ -36,7 +36,7 @@
 在 Codex 中运行：
 
 ```text
-$skill-installer install https://github.com/tingaidehua/ynote-local/tree/main/skills/ynote-local
+$skill-installer install https://github.com/tingaidehua/ynote-local-skill/tree/main/skills/ynote-local
 ```
 
 安装后可直接向 Codex 提问：
