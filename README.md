@@ -210,7 +210,7 @@ cargo build --release --locked
 ## 仓库结构
 
 ```text
-ynote-local
+ynote-local-skill
 ├─ src                         Rust CLI、同步器、镜像与 Web API
 ├─ web                         Web 控制台
 ├─ skills\ynote-local          可直接安装的 Codex Skill
